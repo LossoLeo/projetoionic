@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="titulo">
+      <ion-title>Cadastrar Contatos</ion-title>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+</style>
+
+
+<ion-content>
+  <!-- fab placed to the (vertical) center and end -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="secondary" (click)="irParaHome()">
+      <ion-icon name="list-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Nome</ion-label>
+      <ion-input type="text" [(ngModel)]="_nome"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Telefone</ion-label>
+      <ion-input type="number" [(ngModel)]="_telefone"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Sexo</ion-label>
+      <ion-select placeholder="Selecione seu Sexo" [(ngModel)]="_sexo">
+        <ion-select-option value="Fem">Feminino</ion-select-option>
+        <ion-select-option value="Masc">Masculino</ion-select-option>
+        <ion-select-option value="NDef">Não Desejo Informar</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Data Nascimento</ion-label>
+      <ion-datetime displayFormat="DD/MMM/YYYY" placeholder="Informe sua data de Nascimento"
+        [(ngModel)]="_dataNascimento"></ion-datetime>
+    </ion-item>
+
+
+    <div class="container">
+      <center>
+        <ion-button (click)="Cadastrar()">Cadastrar</ion-button>
+      </center>
+    </div>
+  </ion-list>
+</ion-content>
